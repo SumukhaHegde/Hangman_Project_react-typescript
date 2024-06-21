@@ -30,7 +30,16 @@ const KEYS = [
 ];
 
 const HangmanKeyboard = () => {
-  return <div>HangmanKeyboard</div>;
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit,minmax(75px,1fr))",
+      }}
+    >
+      HangmanKeyboard
+    </div>
+  );
 };
 
 export default HangmanKeyboard;
