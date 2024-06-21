@@ -2,6 +2,7 @@ import React from "react";
 
 const HangmanText = () => {
   const text = "text";
+
   return (
     <div
       style={{
@@ -14,16 +15,16 @@ const HangmanText = () => {
       }}
     >
       {text.split("").map((letter, index) => (
-        <div
+        <span
           key={index}
           style={{
-            borderBottom: "10px solid black",
+            borderBottom: ".1em solid black",
             width: "50px",
             textAlign: "center",
           }}
         >
-          {letter}
-        </div>
+          <span style={{ visibility: "hidden" }}>{letter}</span>
+        </span>
       ))}
     </div>
   );
