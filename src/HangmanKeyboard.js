@@ -37,7 +37,9 @@ const HangmanKeyboard = () => {
         gridTemplateColumns: "repeat(auto-fit,minmax(75px,1fr))",
       }}
     >
-      HangmanKeyboard
+      {KEYS.map((key) => {
+        return <button key={key}>{key}</button>;
+      })}
     </div>
   );
 };
