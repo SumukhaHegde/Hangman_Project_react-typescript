@@ -1,17 +1,19 @@
 import React from "react";
 
 const HangmanText = () => {
-  const text = ["t", "e", "x", "t"];
+  const text = "text";
   return (
     <div
       style={{
         display: "flex",
         gap: "1rem",
-        alignContent: "center",
-        justifyContent: "center",
+        fontSize: "6rem",
+        fontWeight: "bold",
+        fontFamily: "monospace",
+        textTransform: "uppercase",
       }}
     >
-      {text.map((letter, index) => (
+      {text.split("").map((letter, index) => (
         <div
           key={index}
           style={{
