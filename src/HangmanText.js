@@ -2,7 +2,7 @@ import React from "react";
 
 const HangmanText = () => {
   const text = "text";
-
+  const guessedLetter = ["e"];
   return (
     <div
       style={{
@@ -23,7 +23,13 @@ const HangmanText = () => {
             textAlign: "center",
           }}
         >
-          <span style={{ visibility: "hidden" }}>{letter}</span>
+          <span
+            style={{
+              visibility: guessedLetter.includes(letter) ? "visible" : "hidden",
+            }}
+          >
+            {letter}
+          </span>
         </span>
       ))}
     </div>
