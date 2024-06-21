@@ -35,6 +35,7 @@ const HangmanKeyboard = () => {
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(auto-fit,minmax(75px,1fr))",
+        gap: ".5rem",
       }}
     >
       {KEYS.map((key) => {

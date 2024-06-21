@@ -2,7 +2,7 @@ import React from "react";
 
 const HangmanText = () => {
   const text = "text";
-  const guessedLetter = ["e"];
+  const guessedLetter = ["e", "t"];
   return (
     <div
       style={{

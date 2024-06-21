@@ -16,9 +16,9 @@ function App() {
       }}
     >
       <h1>lose win</h1>
-      <div>
-        <HangmanDrawing />
-        <HangmanText />
+      <HangmanDrawing />
+      <HangmanText />
+      <div style={{ alignSelf: "stretch" }}>
         <HangmanKeyboard />
       </div>
     </div>
