@@ -10,7 +10,7 @@
   font-weight: bold;
 }
 
-.keyboard-btn:hover,
+.keyboard-btn:hover:not(:disabled),
 .keyboard-btn:focus {
   background-color: hsl(200, 100%, 75%);
 }
