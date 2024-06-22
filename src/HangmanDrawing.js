@@ -73,7 +73,7 @@ const LEFT_LEG = (
   />
 );
 
-const HangmanDrawing = () => {
+const HangmanDrawing = ({ numberOfGuesses }) => {
   return (
     <div style={{ position: "relative" }}>
       {BODY}
