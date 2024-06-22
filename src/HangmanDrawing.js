@@ -1,5 +1,18 @@
 import React from "react";
 
+const HEAD = (
+  <div
+    style={{
+      width: "50px",
+      height: "50px",
+      borderRadius: "100%",
+      border: "10px solid black",
+      position: "absolute",
+      top: "50px",
+      right: "-30px",
+    }}
+  />
+);
 const BODY = (
   <div
     style={{
@@ -74,24 +87,11 @@ const LEFT_LEG = (
 );
 
 const HangmanDrawing = ({ numberOfGuesses }) => {
+  const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG];
   return (
     <div style={{ position: "relative" }}>
-      {BODY}
-      {RIGHT_ARM}
-      {LEFT_ARM}
-      {RIGHT_LEG}
-      {LEFT_LEG}
-      <div
-        style={{
-          width: "50px",
-          height: "50px",
-          borderRadius: "100%",
-          border: "10px solid black",
-          position: "absolute",
-          top: "50px",
-          right: "-30px",
-        }}
-      />
+      {BODY_PARTS.slice(0, numberOfGuesses)}
+
       <div
         style={{
           width: "10px",
