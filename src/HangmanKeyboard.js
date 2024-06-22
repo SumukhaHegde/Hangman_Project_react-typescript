@@ -1,4 +1,5 @@
 import React from "react";
+import "./keyboard.css";
 
 const KEYS = [
   "a",
@@ -39,7 +40,11 @@ const HangmanKeyboard = () => {
       }}
     >
       {KEYS.map((key) => {
-        return <button key={key}>{key}</button>;
+        return (
+          <button className="keyboard-btn" key={key}>
+            {key}
+          </button>
+        );
       })}
     </div>
   );
