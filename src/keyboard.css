@@ -1,6 +1,6 @@
 .keyboard-btn {
   aspect-ratio: 1/1;
-  background-color: none;
+  background: none;
   border: 3px solid black;
   cursor: pointer;
   width: 100%;
@@ -8,4 +8,18 @@
   color: black;
   padding: 0.5rem;
   font-weight: bold;
+}
+
+.keyboard-btn:hover,
+.keyboard-btn:focus {
+  background-color: hsl(200, 100%, 75%);
+}
+
+.keyboard-btn.active {
+  background-color: hsl(200, 100%, 50%);
+  color: white;
+}
+
+.keyboard-btn.inactive {
+  opacity: 0.3;
 }
