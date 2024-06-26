@@ -1,8 +1,7 @@
 import React from "react";
 
-const HangmanText = () => {
-  const text = "text";
-  const guessedLetter = ["e", "t"];
+const HangmanText = ({ guessedLetters, wordsToGuess }) => {
+  const guessedLetter = guessedLetters;
   return (
     <div
       style={{
@@ -14,7 +13,7 @@ const HangmanText = () => {
         textTransform: "uppercase",
       }}
     >
-      {text.split("").map((letter, index) => (
+      {wordsToGuess.split("").map((letter, index) => (
         <span
           key={index}
           style={{

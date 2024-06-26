@@ -12,6 +12,10 @@ function App() {
   );
   const [guessedLetters, setGuessedLetters] = useState([]);
 
+  const setGuessedLetterByUser = (newLetter) => {
+    setGuessedLetters((prevState) => [...prevState, newLetter]);
+  };
+
   const incorrectLetters = guessedLetters.filter(
     (letter) => !wordsToGuess.includes(letter)
   );
@@ -28,9 +32,12 @@ function App() {
     >
       <h1>lose win</h1>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
-      <HangmanText />
+      <HangmanText
+        guessedLetters={guessedLetters}
+        wordsToGuess={wordsToGuess}
+      />
       <div style={{ alignSelf: "stretch" }}>
-        <HangmanKeyboard />
+        <HangmanKeyboard setGuessedLetterByUser={setGuessedLetterByUser} />
       </div>
     </div>
   );

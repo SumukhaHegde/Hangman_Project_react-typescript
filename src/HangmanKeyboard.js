@@ -30,7 +30,12 @@ const KEYS = [
   "z",
 ];
 
-const HangmanKeyboard = () => {
+const HangmanKeyboard = ({ setGuessedLetterByUser }) => {
+  function handleClick(e) {
+    console.log(e.target.textContent);
+    setGuessedLetterByUser(e.target.textContent);
+  }
+
   return (
     <div
       style={{
@@ -41,7 +46,13 @@ const HangmanKeyboard = () => {
     >
       {KEYS.map((key) => {
         return (
-          <button className="keyboard-btn" key={key}>
+          <button
+            className="keyboard-btn"
+            key={key}
+            onClick={(e) => {
+              handleClick(e);
+            }}
+          >
             {key}
           </button>
         );
