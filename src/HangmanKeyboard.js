@@ -30,12 +30,11 @@ const KEYS = [
   "z",
 ];
 
-const HangmanKeyboard = ({ setGuessedLetterByUser }) => {
-  function handleClick(e) {
-    console.log(e.target.textContent);
-    setGuessedLetterByUser(e.target.textContent);
-  }
-
+const HangmanKeyboard = ({
+  setGuessedLetterByUser,
+  activeLetters,
+  inActiveLetters,
+}) => {
   return (
     <div
       style={{
@@ -45,12 +44,16 @@ const HangmanKeyboard = ({ setGuessedLetterByUser }) => {
       }}
     >
       {KEYS.map((key) => {
+        const isActive = activeLetters.includes(key);
+        const isInactive = inActiveLetters.includes(key);
         return (
           <button
-            className="keyboard-btn"
+            className={`keyboard-btn ${isActive ? "active" : ""} ${
+              isInactive ? "inactive" : ""
+            }`}
             key={key}
-            onClick={(e) => {
-              handleClick(e);
+            onClick={() => {
+              setGuessedLetterByUser(key);
             }}
           >
             {key}

@@ -37,7 +37,13 @@ function App() {
         wordsToGuess={wordsToGuess}
       />
       <div style={{ alignSelf: "stretch" }}>
-        <HangmanKeyboard setGuessedLetterByUser={setGuessedLetterByUser} />
+        <HangmanKeyboard
+          activeLetters={guessedLetters.filter((letter) =>
+            wordsToGuess.includes(letter)
+          )}
+          inActiveLetters={incorrectLetters}
+          setGuessedLetterByUser={setGuessedLetterByUser}
+        />
       </div>
     </div>
   );
