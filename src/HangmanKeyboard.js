@@ -34,6 +34,8 @@ const HangmanKeyboard = ({
   setGuessedLetterByUser,
   activeLetters,
   inActiveLetters,
+  guessedLetters,
+  isguessedLetterLengthExceeds,
 }) => {
   return (
     <div
@@ -51,6 +53,7 @@ const HangmanKeyboard = ({
             className={`keyboard-btn ${isActive ? "active" : ""} ${
               isInactive ? "inactive" : ""
             }`}
+            disabled={isguessedLetterLengthExceeds || isActive || isInactive}
             key={key}
             onClick={() => {
               setGuessedLetterByUser(key);

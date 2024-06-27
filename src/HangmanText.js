@@ -1,6 +1,6 @@
 import React from "react";
 
-const HangmanText = ({ guessedLetters, wordsToGuess }) => {
+const HangmanText = ({ guessedLetters, wordsToGuess, reveal = false }) => {
   const guessedLetter = guessedLetters;
   return (
     <div
@@ -24,7 +24,9 @@ const HangmanText = ({ guessedLetters, wordsToGuess }) => {
         >
           <span
             style={{
-              visibility: guessedLetter.includes(letter) ? "visible" : "hidden",
+              visibility:
+                guessedLetter.includes(letter) || reveal ? "visible" : "hidden",
+              color: guessedLetter.includes(letter) ? "black" : "red",
             }}
           >
             {letter}
